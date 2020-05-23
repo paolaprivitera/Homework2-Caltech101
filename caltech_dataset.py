@@ -43,7 +43,7 @@ class Caltech(VisionDataset):
             for image in images:
                 self.dataset[cont] = (pil_loader(root+"101_ObjectCategories/"+category+"/"+image), i)
                 # tuple (image, category)
-                cont++;
+                self.cont += 1
            
         
     
