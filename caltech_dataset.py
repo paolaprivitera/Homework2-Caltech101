@@ -7,7 +7,7 @@ import os.path
 import sys
 
 
-def pil_loader(path):
+def loader(path):
     # open path as file to avoid ResourceWarning (https://github.com/python-pillow/Pillow/issues/835)
     with open(path, 'rb') as f:
         img = Image.open(f)
@@ -41,7 +41,7 @@ class Caltech(VisionDataset):
             
             images = os.listdir(root+"101_ObjectCategories/"+category)
             for j, image in zip(range(len(images)), images):
-                self.dataset[j] = (pil_loader(root+"101_ObjectCategories/"+category+"/"+image), i)
+                self.dataset[j] = (loader(root+"101_ObjectCategories/"+category+"/"+image), i)
                 # tuple (image, category)
            
         
