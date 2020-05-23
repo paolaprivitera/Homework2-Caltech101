@@ -30,7 +30,7 @@ class Caltech(VisionDataset):
         - Labels should start from 0, so for Caltech you will have lables 0...100 (excluding the background class) 
         '''
     
-        self.objectCategories = os.listdir(root+"101_ObjectCategories/")
+        self.objectCategories = os.listdir(root+"101_ObjectCategories")
         self.objectCategories.remove("BACKGROUND_Google")
         self.objectCategories.sort()
         self.dataset = {}
