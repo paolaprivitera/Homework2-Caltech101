@@ -33,15 +33,17 @@ class Caltech(VisionDataset):
         self.objectCategories = os.listdir(root+"101_ObjectCategories")
         self.objectCategories.remove("BACKGROUND_Google")
         self.dataset = {}
+        self.cont = 0
         
         self.categories = {}
         for i, category in zip(range(len(self.objectCategories)), self.objectCategories):
             self.categories[category] = i # key = category and value = index
             
             images = os.listdir(root+"101_ObjectCategories/"+category)
-            for j, image in zip(range(len(images)), images):
-                self.dataset[j] = (pil_loader(root+"101_ObjectCategories/"+category+"/"+image), i)
+            for image in images:
+                self.dataset[cont] = (pil_loader(root+"101_ObjectCategories/"+category+"/"+image), i)
                 # tuple (image, category)
+                cont++;
            
         
     
