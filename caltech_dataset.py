@@ -32,7 +32,7 @@ class Caltech(VisionDataset):
     
         self.objectCategories = os.listdir(root+"101_ObjectCategories")
         self.objectCategories.remove("BACKGROUND_Google")
-        self.objectCategories.sort()
+        objectCategories = sorted(self.objectCategories)
         self.dataset = {}
         
         self.categories = {}
