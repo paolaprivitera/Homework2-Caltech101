@@ -41,7 +41,7 @@ class Caltech(VisionDataset):
             
             images = os.listdir(root+"101_ObjectCategories/"+category)
             for image in images:
-                self.dataset[cont] = (pil_loader(root+"101_ObjectCategories/"+category+"/"+image), i)
+                self.dataset[self.cont] = (pil_loader(root+"101_ObjectCategories/"+category+"/"+image), i)
                 # tuple (image, category)
                 self.cont += 1
            
